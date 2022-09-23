@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
-import VueAutoTyper from '../../src/components/VueAutoTyper.vue';
+import VueAutoWriter from '../../src/components/VueAutoWriter.vue';
 
-describe('VueAutoTyper', () => {
+describe('VueAutoWriter', () => {
 
-  it('create VueAutoTyper should have baseText value and default props values', () => {
-    const wrapper = shallowMount(VueAutoTyper, {
+  it('create VueAutoWriter should have baseText value and default props values', () => {
+    const wrapper = shallowMount(VueAutoWriter, {
       propsData: {
         baseText: 'Hello World'
       }
@@ -21,8 +21,8 @@ describe('VueAutoTyper', () => {
     expect(wrapper.vm.$props.infinite).toEqual(false);
   })
 
-  it('create VueAutoTyper with custom props should pass props values', () => {
-    const wrapper = shallowMount(VueAutoTyper, {
+  it('create VueAutoWriter with custom props should pass props values', () => {
+    const wrapper = shallowMount(VueAutoWriter, {
       propsData: {
         baseText: 'Hello Other World',
         texts: [
@@ -54,10 +54,10 @@ describe('VueAutoTyper', () => {
     expect(wrapper.vm.$props.infinite).toEqual(true);
   })
 
-  it('create VueAutoTyper with infinite should write on data property actualBaseText and clear it', () => {
+  it('create VueAutoWriter with infinite should write on data property actualBaseText and clear it', () => {
     jest.useFakeTimers()
 
-    const wrapper = shallowMount(VueAutoTyper, {
+    const wrapper = shallowMount(VueAutoWriter, {
       propsData: {
         baseText: 'Hello World',
         delayOnWriter: 100,
@@ -74,10 +74,10 @@ describe('VueAutoTyper', () => {
     expect(wrapper.vm.$data.actualBaseText).toEqual('')
   })
 
-  it('create VueAutoTyper with baseText should write on data property actualBaseText', () => {
+  it('create VueAutoWriter with baseText should write on data property actualBaseText', () => {
     jest.useFakeTimers()
 
-    const wrapper = shallowMount(VueAutoTyper, {
+    const wrapper = shallowMount(VueAutoWriter, {
       propsData: {
         baseText: 'Hello World',
         delayOnWriter: 0,
@@ -91,10 +91,10 @@ describe('VueAutoTyper', () => {
     expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World')
   })
 
-  it('create VueAutoTyper with baseText and texts should write every one on data property actualText', () => {
+  it('create VueAutoWriter with baseText and texts should write every one on data property actualText', () => {
     jest.useFakeTimers()
 
-    const wrapper = shallowMount(VueAutoTyper, {
+    const wrapper = shallowMount(VueAutoWriter, {
       propsData: {
         baseText: 'Hello World',
         delayOnWriter: 0,
@@ -120,10 +120,10 @@ describe('VueAutoTyper', () => {
     expect(wrapper.vm.$data.actualText).toEqual('First Text')
   })
 
-  it('create VueAutoTyper with baseText empty should trigger to fill', () => {
+  it('create VueAutoWriter with baseText empty should trigger to fill', () => {
     jest.useFakeTimers()
 
-    const wrapper = shallowMount(VueAutoTyper, {
+    const wrapper = shallowMount(VueAutoWriter, {
       propsData: {
         baseText: 'Hello World',
         delayOnWriter: 0,

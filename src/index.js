@@ -1,9 +1,9 @@
-import VueAutoTyper from './components/VueAutoTyper.vue';
+import VueAutoWriter from './components/VueAutoWriter.vue';
 
 export function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('VueAutoTyper', VueAutoTyper);
+  Vue.component('VueAutoWriter', VueAutoWriter);
 }
 
 const plugin = {
@@ -20,4 +20,4 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-export default VueAutoTyper;
+export default VueAutoWriter;

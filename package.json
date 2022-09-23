@@ -1,15 +1,36 @@
 {
-  "name": "vue-auto-typer",
+  "name": "vue-auto-writer",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "description": "Just a simple and lightweight auto typer/writer component made with Vue.js.",
+  "homepage": "https://github.com/Adolfok3/vue-auto-writer#readme",
   "author": "Luiz Adolfo",
-  "main": "./dist/VueAutoTyper.common.js",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "writer",
+    "typer",
+    "vue-components",
+    "vue-writer",
+    "vue-typer",
+    "vue-auto-writer",
+    "vue-auto-typer",
+    "writer",
+    "auto-writer",
+    "auto-typer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:Adolfok3/vue-auto-writer.git"
+  },
+  "main": "./dist/VueAutoWriter.common.js",
   "files": [
     "dist/*"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name VueAutoTyper src/index.js",
+    "build": "vue-cli-service build --target lib --name VueAutoWriter src/index.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },

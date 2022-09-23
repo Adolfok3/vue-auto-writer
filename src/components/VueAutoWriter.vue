@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'VueAutoTyper',
+  name: 'VueAutoWriter',
   props: {
     baseText: {
       type: String,

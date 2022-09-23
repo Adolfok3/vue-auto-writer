@@ -1,1 +1,1 @@
-# vue-auto-typer
+# vue-auto-writer
