@@ -1,0 +1,14 @@
+.cursor-blink {
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes blink {
+  from,50%,to{opacity:1;}25%,75%{opacity:0;}
+}
+@keyframes blink {
+  from,50%,to{opacity:1;}25%,75%{opacity:0;}
+}

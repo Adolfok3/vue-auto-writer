@@ -1,7 +1,7 @@
 <template>
   <span>{{actualBaseText}}
     <span :style="currentTextStyle">{{ actualText }}
-      <span :style="[cursorColorStyle, cursorSizeStyle, cursorBlinkSpeedStyle]" :class="[cursorBlinkClass]">|</span>
+      <span :style="[cursorColorStyle, cursorSizeStyle, cursorBlinkSpeedStyle]" :class="cursorBlinkClass">|</span>
     </span>
   </span>
 </template>
@@ -164,43 +164,5 @@ export default {
 };
 </script>
 
-<style scoped>
-.no-spaces {
-  padding: 0px;
-  margin:0px;
-}
-
-.cursor-blink {
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: blink;
-  animation-name: blink;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes blink {
-  from,
-  50%,
-  to {
-    opacity: 1;
-  }
-
-  25%,
-  75% {
-    opacity: 0;
-  }
-}
-@keyframes blink {
-  from,
-  50%,
-  to {
-    opacity: 1;
-  }
-
-  25%,
-  75% {
-    opacity: 0;
-  }
-}
+<style src="../assets/css/style.css" scoped>
 </style>
