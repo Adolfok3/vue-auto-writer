@@ -20,4 +20,8 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-export default VueAutoWriter;
+VueAutoWriter.install = install
+
+export default VueAutoWriter
+
+export { VueAutoWriter }

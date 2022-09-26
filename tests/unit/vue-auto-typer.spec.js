@@ -67,7 +67,6 @@ describe('VueAutoWriter', () => {
       }
     });
     
-    wrapper.vm.$mount()
     jest.advanceTimersByTime(5000)
     expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World')
     jest.advanceTimersByTime(600)
@@ -86,7 +85,6 @@ describe('VueAutoWriter', () => {
       }
     });
     
-    wrapper.vm.$mount()
     jest.advanceTimersByTime(1000)
     expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World')
   })
@@ -111,7 +109,6 @@ describe('VueAutoWriter', () => {
       }
     });
     
-    wrapper.vm.$mount()
     jest.advanceTimersByTime(2000)
     expect(wrapper.vm.$data.actualText).toEqual('First Text')
     jest.advanceTimersByTime(2000)
@@ -131,10 +128,9 @@ describe('VueAutoWriter', () => {
       }
     });
     
-    wrapper.vm.$mount()
     expect(wrapper.vm.$data.actualBaseText).toEqual('')
 
-    wrapper.vm.$props.delayOnStart = 1;
+    wrapper.setProps({delayOnStart: 1})
     jest.advanceTimersByTime(500)
     expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World')
   })
