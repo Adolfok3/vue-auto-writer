@@ -132,6 +132,6 @@ describe('VueAutoWriter', () => {
 
     wrapper.setProps({delayOnStart: 1})
     jest.advanceTimersByTime(500)
-    expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World a')
+    expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World')
   })
 });
