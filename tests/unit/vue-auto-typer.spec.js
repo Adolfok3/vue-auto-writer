@@ -116,4 +116,22 @@ describe('VueAutoWriter', () => {
     jest.advanceTimersByTime(2000)
     expect(wrapper.vm.$data.actualText).toEqual('First Text')
   })
+
+  it('create VueAutoWriter with baseText empty should trigger to fill', () => {
+    jest.useFakeTimers()
+
+    const wrapper = shallowMount(VueAutoWriter, {
+      propsData: {
+        baseText: 'Hello World',
+        delayOnWriter: 0,
+        delayOnStart: 0,
+      }
+    });
+    
+    expect(wrapper.vm.$data.actualBaseText).toEqual('')
+
+    wrapper.setProps({delayOnStart: 1})
+    jest.advanceTimersByTime(500)
+    expect(wrapper.vm.$data.actualBaseText).toEqual('Hello World')
+  })
 });
