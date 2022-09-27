@@ -20,9 +20,5 @@ jobs:
       run: yarn test
     - name: Set current branch
       run: echo "CURRENT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
-    - name: Check current branch
-      run: |
-        echo $CURRENT_BRANCH
-        echo ${{ env.CURRENT_BRANCH }}
     - name: Analysis
       run: ./node_modules/.bin/codecov --token="${{secrets.CODECOV_TOKEN}}" --branch="${{env.CURRENT_BRANCH}}"
