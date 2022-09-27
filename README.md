@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://i.imgur.com/ySmlMPR.gif" >
-  <h1>Vue Auto Typer</h1>
+  <h1>Vue Auto Writer</h1>
 </div>
 <p align="center">
   Just a simple and lightweight auto writer/typer component made with Vue.js.
