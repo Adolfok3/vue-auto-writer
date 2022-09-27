@@ -1,0 +1,24 @@
+name: PullRequest
+
+on:
+  pull_request:
+    branches: ['**']
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install Dependencies
+      run: yarn
+    - name: Run Tests
+      run: yarn test
+    - name: Set current branch
+      run: echo "CURRENT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+    - name: Analysis
+      run: ./node_modules/.bin/codecov --token="${{secrets.CODECOV_TOKEN}}" --branch="${{env.CURRENT_BRANCH}}"
