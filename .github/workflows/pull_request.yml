@@ -12,9 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install Dependencies
+    - name: Setup Node
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - name: Yarn
+    - name: Install Dependencies
       run: yarn
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Run Tests
+      run: yarn test
